@@ -16,8 +16,6 @@ function addTask()
         const list = document.querySelector('#task-list')
 
         list.appendChild(newTask)
-        
-        savingStorage()
 
         document.querySelector('#task-title').value = ''
 
@@ -37,8 +35,6 @@ function addTask()
 let removeTask = (task) => 
 {
     task.parentNode.remove(true)
-    savingStorage()
-}
 
 let doneTask = (task) =>
 {
@@ -54,9 +50,3 @@ btn.addEventListener("click", function(event)
 
     addTask()
 })
-
-let savingStorage = () =>
-{
-    // constante localStorage
-    localStorage.setItem('newTask', JSON.stringify(newTask));
-}
