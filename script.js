@@ -35,6 +35,7 @@ function addTask()
 let removeTask = (task) => 
 {
     task.parentNode.remove(true)
+}
 
 let doneTask = (task) =>
 {
@@ -49,4 +50,12 @@ btn.addEventListener("click", function(event)
     event.preventDefault()
 
     addTask()
+})
+
+btn.addEventListener("keyup", function(event)
+{
+    event.preventDefault()
+
+    if( event.key === "Enter" )
+        addTask()
 })
